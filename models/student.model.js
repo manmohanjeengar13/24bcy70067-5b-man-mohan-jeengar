@@ -10,10 +10,11 @@ const studentSchema = new mongoose.Schema(
       maxlength: 50
     },
     roll: {
-      type: Number,
+      type: String,
       required: true,
       unique: true,
-      min: 1
+      trim: true,
+      match: /^[a-zA-Z0-9-]+$/
     }
   },
   { timestamps: true }
