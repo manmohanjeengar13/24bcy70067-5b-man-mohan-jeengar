@@ -21,6 +21,8 @@ app.use(methodOverride("_method"));
 app.use("/students", studentRoutes);
 app.use("/view/students", studentViewRoutes);
 
-app.listen(process.env.PORT, () =>
-  console.log(`🚀 Server running on port ${process.env.PORT}`)
-);
+app.get("/", (req, res) => {
+  res.redirect("/view/students");
+});
+
+export default app;
